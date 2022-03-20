@@ -1,0 +1,30 @@
+.signup-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  overflow: hidden;
+  margin: 0;
+}
+
+.card {
+  background-color: #535353;
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+  min-width: 300px;
+  margin: auto;
+  text-align: center;
+  font-family: arial;
+  padding: 20px;
+}
+
+.card small {
+  margin-top: 10px;
+}
+
+a {
+  color: white;
+  text-decoration: none;
+}

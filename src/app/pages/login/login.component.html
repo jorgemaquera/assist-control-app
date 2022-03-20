@@ -1,0 +1,20 @@
+<div class="login-page">
+  <form (ngSubmit)="onSubmit(); loginForm.resetForm()" class="card" #loginForm="ngForm">
+    <h1>Login</h1>
+    <mat-form-field class="form-control">
+      <mat-label>Username</mat-label>
+      <input matInput name="username" placeholder="Enter username" id="username" type="text" [(ngModel)]="user.username"
+        #username='ngModel' required>
+    </mat-form-field>
+
+    <mat-form-field class="form-control">
+      <mat-label>Password</mat-label>
+      <input matInput name="password" placeholder="Enter password" id="password" type="password"
+        [(ngModel)]="user.password" #password='ngModel' required>
+    </mat-form-field>
+
+    <button type="submit" mat-raised-button color="primary" [disabled]="loginForm.invalid || loading">Login</button>
+    <mat-error *ngIf="error">{{ error }}</mat-error>
+    <small><a [routerLink]="['/signup']" routerLinkActive="router-link-active">Sign up</a></small>
+  </form>
+</div>
