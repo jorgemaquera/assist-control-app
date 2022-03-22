@@ -1,5 +1,5 @@
 <div class="signup-page">
-  <form (ngSubmit)="onSubmit(); signupForm.resetForm()" class="card" #signupForm="ngForm">
+  <form (ngSubmit)="onSubmit();" class="card" #signupForm="ngForm">
     <h1>Signup</h1>
     <mat-form-field class="form-control">
       <mat-label>Username</mat-label>
@@ -18,6 +18,17 @@
       <input matInput name="email" placeholder="Enter email" id="email" type="email" [(ngModel)]="user.email"
         #email='ngModel' required>
     </mat-form-field>
+
+    <div *ngIf="selectedFile">
+      {{ selectedFile.name }}
+    </div>
+
+    <div class="form-control" style="margin-bottom: 10px">
+      <button type="button" color="primary" mat-raised-button (click)="fileInput.click()">Seleccionar foto de
+        perfil</button>
+      <input hidden (change)="onFileSelected($event)" #fileInput type="file" id="file" accept="image/*">
+    </div>
+
 
     <button type="submit" mat-raised-button color="primary" [disabled]="signupForm.invalid || loading">Signup</button>
     <label *ngIf="success">{{ success }}</label>

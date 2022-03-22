@@ -25,4 +25,9 @@ export class UserService {
       this.httpOptions
     );
   }
+  uploadImage(image: File): Observable<any> {
+    const formData = new FormData();
+    formData.append('image', image);
+    return this.http.post<any>(`${this.usersUrl}/image`, formData);
+  }
 }

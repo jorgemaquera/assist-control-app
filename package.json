@@ -21,7 +21,11 @@
     "@angular/platform-browser-dynamic": "~13.2.0",
     "@angular/router": "~13.2.0",
     "@aspnet/signalr": "^1.0.27",
+    "@microsoft/signalr": "^6.0.3",
+    "@types/pdfmake": "^0.1.21",
+    "pdfmake": "^0.2.4",
     "rxjs": "~7.5.0",
+    "secure-ls": "^1.2.6",
     "tslib": "^2.3.0",
     "zone.js": "~0.11.4"
   },

@@ -18,6 +18,7 @@ import { SignupComponent } from './pages/signup/signup.component';
 import { UsersComponent } from './pages/users/users.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { httpInterceptorProviders } from './http-interceptors';
+import { ChatComponent } from './pages/chat/chat.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { httpInterceptorProviders } from './http-interceptors';
     SignupComponent,
     UsersComponent,
     NavbarComponent,
+    ChatComponent,
   ],
   imports: [
     BrowserModule,

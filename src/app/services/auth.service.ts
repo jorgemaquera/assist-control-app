@@ -2,6 +2,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, map, Observable } from 'rxjs';
 import { User } from '../models/User';
+import { SecureLsService } from './secure-ls.service';
 
 @Injectable({
   providedIn: 'root',
@@ -16,9 +17,12 @@ export class AuthService {
   private currentUserSubject: BehaviorSubject<User>;
   public currentUser: Observable<User>;
 
-  constructor(private http: HttpClient) {
+  constructor(
+    private http: HttpClient,
+    private secureLsService: SecureLsService
+  ) {
     this.currentUserSubject = new BehaviorSubject<User>(
-      JSON.parse(localStorage.getItem('currentUser'))
+      this.secureLsService.getItem('currentUser')
     );
     this.currentUser = this.currentUserSubject.asObservable();
   }
@@ -36,7 +40,7 @@ export class AuthService {
       )
       .pipe(
         map((user) => {
-          localStorage.setItem('currentUser', JSON.stringify(user));
+          this.secureLsService.setItem('currentUser', user);
           this.currentUserSubject.next(user);
           return user;
         })
@@ -44,11 +48,7 @@ export class AuthService {
   }
 
   logout() {
-    localStorage.removeItem('currentUser');
+    this.secureLsService.removeItem('currentUser');
     this.currentUserSubject.next(null);
-    // this.currentUserSubject = new BehaviorSubject<User>(
-    //   JSON.parse(localStorage.getItem('currentUser')!)
-    // );
-    // this.currentUser = this.currentUserSubject.asObservable();
   }
 }

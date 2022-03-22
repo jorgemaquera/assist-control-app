@@ -6,4 +6,5 @@ export class User {
   rol?: number;
   status?: boolean;
   token?: string;
+  imgUrl?: string;
 }
