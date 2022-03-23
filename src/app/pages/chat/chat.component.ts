@@ -4,7 +4,7 @@ import { SignalRService } from 'src/app/services/signal-r.service';
 @Component({
   selector: 'app-chat',
   templateUrl: './chat.component.html',
-  styleUrls: ['./chat.component.css'],
+  styleUrls: ['./chat.component.scss'],
 })
 export class ChatComponent implements OnInit {
   newMessage: string;
