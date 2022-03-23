@@ -9,6 +9,7 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatButtonModule } from '@angular/material/button';
 import { MatTableModule } from '@angular/material/table';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -42,6 +43,7 @@ import { ChatComponent } from './pages/chat/chat.component';
     MatFormFieldModule,
     MatButtonModule,
     MatTableModule,
+    MatSlideToggleModule,
   ],
   providers: [httpInterceptorProviders],
   bootstrap: [AppComponent],

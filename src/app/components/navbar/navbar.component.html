@@ -4,6 +4,8 @@
   </ul>
 
   <div class="options">
+    <mat-slide-toggle color="primary" [checked]="isDarkTheme" (change)="isDarkTheme = !isDarkTheme">Dark Theme
+    </mat-slide-toggle>
     <button mat-icon-button color="warn" (click)="logout()">
       <mat-icon>logout</mat-icon>
     </button>

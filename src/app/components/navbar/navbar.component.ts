@@ -8,9 +8,17 @@ import { AuthService } from 'src/app/services/auth.service';
   styleUrls: ['./navbar.component.css'],
 })
 export class NavbarComponent implements OnInit {
+  // TODO: Use obsersable to get the value stored on StyleManagerService
+  isDarkTheme = false;
+  private readonly stylesBasePath = `node_modules/@angular/material/prebuilt-themes/`;
+
   constructor(private router: Router, private authService: AuthService) {}
 
   ngOnInit(): void {}
+
+  toggleTheme() {
+    this.isDarkTheme = !this.isDarkTheme;
+  }
 
   logout() {
     this.authService.logout();
